@@ -1,0 +1,18 @@
+[Core General]
+ObeyDRM=false
+
+[General]
+DisplayDocumentNameOrPath=Path
+ShellOpenFileInTabs=true
+
+[Main View]
+SplitterSizes=542,1295
+
+[Nav Panel]
+GroupByAuthor=false
+
+[PageView]
+ViewColumns=2
+
+[Reviews]
+AnnotationTools=<tool id="1" type="highlight"><engine color="#ffff00" type="TextSelector"><annotation color="#ffff00" type="Highlight"/></engine><shortcut>1</shortcut></tool>,<tool id="2" type="highlight"><engine color="#ff5500" type="TextSelector"><annotation color="#ff5500" type="Highlight"/></engine><shortcut>2</shortcut></tool>,<tool id="3" type="highlight"><engine color="#55ff00" type="TextSelector"><annotation color="#55ff00" type="Highlight"/></engine><shortcut>3</shortcut></tool>,<tool id="4" type="highlight"><engine color="#00ffff" type="TextSelector"><annotation color="#00ffff" type="Highlight"/></engine><shortcut>4</shortcut></tool>,<tool id="5" type="rectangle"><engine color="#ff0000" block="true" type="PickPoint"><annotation color="#ff0000" width="1" type="GeomSquare"/></engine><shortcut>5</shortcut></tool>,<tool id="6" type="straight-line"><engine points="2" color="#ff0000" type="PolyLine"><annotation color="#ff0000" width="1" type="Line"/></engine><shortcut>6</shortcut></tool>,<tool id="7" type="note-inline"><engine color="#ffffff" block="true" type="PickPoint" hoverIcon="tool-note-inline"><annotation color="#ffffff" width="0" type="FreeText" font="TeX Gyre Cursor\\,9\\,-1\\,5\\,50\\,0\\,0\\,0\\,0\\,0\\,Regular"/></engine><shortcut>7</shortcut></tool>,<tool id="8" type="ellipse"><engine color="#ff0000" block="true" type="PickPoint"><annotation color="#ff0000" width="5" type="GeomCircle"/></engine><shortcut>8</shortcut></tool>,<tool id="9" type="polygon"><engine points="-1" color="#ff0000" type="PolyLine"><annotation color="#ff0000" width="1" type="Line"/></engine><shortcut>9</shortcut></tool>

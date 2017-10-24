@@ -1,0 +1,36 @@
+rename .Xresources
+mkdir rofi
+
+shell udisksctl mount -b /dev/sdb1
+shell udisksctl unmount -b /dev/sdb1
+scout -fi us
+scout -fi 
+search st
+scout -fi st
+shell c
+rename lockback.jpg
+scout -fi .conf
+scout -fi i3
+rename battery.sh
+rename cpu_usage.sh
+shell udisksctl mount -b /dev/sdb4
+scout -fi slin
+mkdir configs 11.10.17
+shell et co
+set colorscheme=default
+set colorscheme=jungle
+set colorscheme=snow
+set colorscheme=solarized
+set colorscheme=
+shell zip %s
+shell zip knjige.zip %s 
+shell unzip %s
+mkdir vim
+open_with evince
+open_with evince f
+mkdir staro staro
+delete
+scout -fi conf
+mkdir confs
+open_with 
+open_with 1

@@ -1,0 +1,16 @@
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #154360, #000000, #21618c
+rofi.color-normal: #154360, #e0e0e0, #154360, argb:FF21618c, #ffc107
+rofi.color-active: #154360, #42a5f5, #154360, argb:FF21618c, #42a5f5
+rofi.color-urgent: #154360, #e64a19, #154360, argb:7321618c, #e64a19
+rofi.matching: fuzzy
+rofi.combi-modi: window,run,drun
+rofi.switchers: combi,window
+rofi.scroll-method: 1
+rofi.font: System San Francisco Display 12
+rofi.lines:15
+rofi.line-margin:0
+rofi.bw:0
