@@ -10,13 +10,13 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'shougo/neocomplete.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'chrisbra/changesPlugin'
-Plug 'tpope/vim-obsession'
+Plug 'Valloric/YouCompleteMe'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 set directory^=$HOME/.vim/tmp//
@@ -32,8 +32,6 @@ autocmd FileType markdown,md,latex,tex setlocal spell
 set spelllang=hr
 
 set pastetoggle=<F3>
-
-let g:neocomplete#enable_at_startup = 1
 
 "highlight LineNr ctermfg=yellow
 set showcmd
@@ -73,6 +71,7 @@ let g:pymode_trim_whitespaces=1
 let g:pymode_options=1
 
 "slime
+let g:slime_target='tmux'
 nmap <leader>p <Plug>SlimeParagraphSend
 nmap <leader>l <Plug>SlimeLineSend
 xmap <leader>s <Plug>SlimeRegionSend
@@ -97,3 +96,7 @@ autocmd vimenter * NERDTree
 hi ChangesSignTextAdd ctermbg=yellow ctermfg=black guibg=darkgreen
 hi ChangesSignTextDel ctermbg=darkred  ctermfg=black guibg=darkred
 hi ChangesSignTextCh  ctermbg=black  ctermfg=white guibg=darkblue
+
+" youcompleteme
+let g:ycm_key_invoke_completion = '<C-TAB>'
+let g:ycm_auto_trigger = 1
