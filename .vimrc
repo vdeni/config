@@ -17,6 +17,7 @@ Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'chrisbra/changesPlugin'
 Plug 'Valloric/YouCompleteMe'
 Plug 'Yggdroot/indentLine'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 set directory^=$HOME/.vim/tmp//
@@ -93,10 +94,14 @@ let g:airline_theme='powerlineish'
 autocmd vimenter * NERDTree
 
 "changes
-hi ChangesSignTextAdd ctermbg=yellow ctermfg=black guibg=darkgreen
-hi ChangesSignTextDel ctermbg=darkred  ctermfg=black guibg=darkred
-hi ChangesSignTextCh  ctermbg=black  ctermfg=white guibg=darkblue
+hi ChangesSignTextAdd ctermbg=yellow ctermfg=black guibg=#27AE60
+hi ChangesSignTextDel ctermbg=darkred  ctermfg=black guibg=#CB4335
+hi ChangesSignTextCh  ctermbg=black  ctermfg=white guibg=#2E86C1
+let g:changes_use_icons=0
 
 " youcompleteme
 let g:ycm_key_invoke_completion = '<C-TAB>'
 let g:ycm_auto_trigger = 1
+
+set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ Book
+let g:airline_powerline_fonts=1
