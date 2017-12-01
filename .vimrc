@@ -17,6 +17,7 @@ Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'chrisbra/changesPlugin'
 Plug 'Valloric/YouCompleteMe'
 Plug 'Yggdroot/indentLine'
+Plug 'kshenoy/vim-signature'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
@@ -24,6 +25,7 @@ set directory^=$HOME/.vim/tmp//
 
 color molokai
 
+syntax sync minlines=256
 set number
 set cursorline
 set clipboard=unnamedplus
@@ -59,7 +61,7 @@ let R_nvimpager="horizontal"
 let R_term="gnome-terminal"
 let R_in_buffer=0
 let R_applescript=0
-"let R_tmux_split=1
+let R_tmux_split=1
 
 " kraj Nvim opcija
 
@@ -105,3 +107,10 @@ let g:ycm_auto_trigger = 1
 
 set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ Book
 let g:airline_powerline_fonts=1
+
+" spremanje foldova
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave *.* mkview
+  autocmd BufWinEnter *.* silent loadview
+augroup END
