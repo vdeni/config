@@ -114,3 +114,5 @@ augroup AutoSaveFolds
   autocmd BufWinLeave *.* mkview
   autocmd BufWinEnter *.* silent loadview
 augroup END
+
+set foldcolumn=1
