@@ -4,7 +4,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'jalvesaq/Nvim-R'
 Plug 'junegunn/goyo.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'python-mode/python-mode'
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -15,10 +15,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'chrisbra/changesPlugin'
-Plug 'Valloric/YouCompleteMe'
 Plug 'Yggdroot/indentLine'
 Plug 'kshenoy/vim-signature'
 Plug 'ryanoasis/vim-devicons'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 set directory^=$HOME/.vim/tmp//
@@ -103,9 +103,9 @@ let g:changes_use_icons=0
 
 " youcompleteme
 let g:ycm_key_invoke_completion = '<C-TAB>'
-let g:ycm_auto_trigger = 1
+let g:ycm_auto_trigger = 0
 
-set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ Book
+set guifont=Hurmit\ Nerd\ Font\ Mono\ Medium
 let g:airline_powerline_fonts=1
 
 " spremanje foldova
@@ -116,3 +116,8 @@ augroup AutoSaveFolds
 augroup END
 
 set foldcolumn=1
+
+" regex za ctrlp
+let g:ctrlp_regexp = 1
+
+set conceallevel=0
