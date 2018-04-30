@@ -30,6 +30,8 @@ set number
 set cursorline
 set clipboard=unnamedplus
 
+let g:pandoc#filetypes#pandoc_markdown = 0
+
 "spellcheck
 autocmd FileType markdown,md,latex,tex setlocal spell
 set spelllang=hr
@@ -61,7 +63,7 @@ let R_nvimpager="horizontal"
 let R_term="gnome-terminal"
 let R_in_buffer=0
 let R_applescript=0
-let R_tmux_split=1
+"let R_tmux_split=1
 
 " kraj Nvim opcija
 
@@ -117,7 +119,10 @@ augroup END
 
 set foldcolumn=1
 
-" regex za ctrlp
-let g:ctrlp_regexp = 1
+" ctrlp
+let g:ctrlp_regexp = 1 "regex kao default search
 
 set conceallevel=0
+
+" vim markdown
+let g:vim_markdown_conceal = 0
