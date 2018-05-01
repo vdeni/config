@@ -22,6 +22,8 @@ Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 set directory^=$HOME/.vim/tmp//
+let $TMPDIR = $HOME."/tmp"
+set shell=/bin/bash
 
 color molokai
 
@@ -29,6 +31,8 @@ syntax sync minlines=256
 set number
 set cursorline
 set clipboard=unnamedplus
+
+autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 let g:pandoc#filetypes#pandoc_markdown = 0
 
@@ -80,15 +84,6 @@ let g:slime_target='tmux'
 nmap <leader>p <Plug>SlimeParagraphSend
 nmap <leader>l <Plug>SlimeLineSend
 xmap <leader>s <Plug>SlimeRegionSend
-
-"neocomplete vim opcije
-let g:neocomplete#enable_auto_select=0
-let g:neocomplete#disable_auto_complete=0
-let g:jedi#completions_enabled=0
-let g:jedi#auto_initialization=1
-let g:jedi#popup_select_first=0
-let g:pymode_rope=0
-let g:pymode_rope_lookup_project=0
 
 "airline opcije
 set laststatus=2
