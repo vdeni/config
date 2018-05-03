@@ -1,3 +1,4 @@
+set shell=/bin/bash
 call plug#begin('~/.vim/plugins_by_vimplug')
 Plug 'scrooloose/nerdtree'
 Plug 'flazz/vim-colorschemes'
@@ -22,8 +23,6 @@ Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 set directory^=$HOME/.vim/tmp//
-let $TMPDIR = $HOME."/tmp"
-set shell=/bin/bash
 
 color molokai
 
@@ -65,8 +64,9 @@ let R_nvimpager="horizontal"
 
 " forsira tmux za N-vim-R
 let R_term="gnome-terminal"
-let R_in_buffer=0
+let R_in_buffer=1
 let R_applescript=0
+let R_hl_term=1
 "let R_tmux_split=1
 
 " kraj Nvim opcija
