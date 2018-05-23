@@ -1,4 +1,3 @@
-set shell=/bin/bash
 call plug#begin('~/.vim/plugins_by_vimplug')
 Plug 'scrooloose/nerdtree'
 Plug 'flazz/vim-colorschemes'
@@ -21,6 +20,8 @@ Plug 'kshenoy/vim-signature'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Valloric/YouCompleteMe'
 call plug#end()
+
+set conceallevel=0
 
 set directory^=$HOME/.vim/tmp//
 
@@ -65,8 +66,8 @@ let R_nvimpager="horizontal"
 " forsira tmux za N-vim-R
 let R_term="gnome-terminal"
 let R_in_buffer=1
-let R_applescript=0
 let R_hl_term=1
+let R_applescript=0
 "let R_tmux_split=1
 
 " kraj Nvim opcija
@@ -99,8 +100,9 @@ hi ChangesSignTextCh  ctermbg=black  ctermfg=white guibg=#2E86C1
 let g:changes_use_icons=0
 
 " youcompleteme
-let g:ycm_key_invoke_completion = '<C-TAB>'
+let g:ycm_key_invoke_completion = '<C-X><C-O>'
 let g:ycm_auto_trigger = 0
+let g:ycm_server_python_interpreter = '/usr/bin/python2.7'
 
 set guifont=Hurmit\ Nerd\ Font\ Mono\ Medium
 let g:airline_powerline_fonts=1
@@ -117,7 +119,9 @@ set foldcolumn=1
 " ctrlp
 let g:ctrlp_regexp = 1 "regex kao default search
 
-set conceallevel=0
-
 " vim markdown
 let g:vim_markdown_conceal = 0
+
+" indentline: gasi conceal za indentline jer interferira s tex i md
+let g:indentLine_fileTypeExclude = ['tex', 'markdown', 'md']
+let g:indentLine_conceallevel = 0
