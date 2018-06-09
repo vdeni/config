@@ -74,7 +74,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 30
+    transparency = 5
     
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -148,7 +148,8 @@
     icon_position = left
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
+    #icon_folders = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
+    icon_folders = /usr/share/icons/Numix/16/status/:/usr/share/icons/Numix/16/devices/
 
     # Limit icons size.
     max_icon_size=128
@@ -189,9 +190,9 @@
 
 [urgency_normal]
     #background = "#2B2C2B"
-    background = "#F2F3F4"
+    background = "#34495E"
     #foreground = "#F9FAF9"
-    foreground = "#000000"
+    foreground = "#F2F3F4"
     timeout = 10
 
 [urgency_critical]
