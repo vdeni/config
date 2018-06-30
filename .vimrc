@@ -70,6 +70,12 @@ let R_hl_term=1
 let R_applescript=0
 "let R_tmux_split=1
 
+let R_rconsole_height = 15
+let R_rconsole_width = 190
+let R_min_editor_width = 90
+
+let R_pdfviewer="okular"
+
 " kraj Nvim opcija
 
 " opcije za vim-python
@@ -102,7 +108,7 @@ let g:changes_use_icons=0
 " youcompleteme
 let g:ycm_key_invoke_completion = '<C-X><C-O>'
 let g:ycm_auto_trigger = 0
-let g:ycm_server_python_interpreter = '/usr/bin/python2.7'
+let g:ycm_server_python_interpreter = '/usr/bin/python3.6'
 
 set guifont=Hurmit\ Nerd\ Font\ Mono\ Medium
 let g:airline_powerline_fonts=1
