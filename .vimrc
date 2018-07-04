@@ -63,18 +63,19 @@ set nofoldenable    " disable folding
 " horizontalno otvaranje helpdoca za R
 let R_nvimpager="horizontal"
 
-" forsira tmux za N-vim-R
 let R_term="gnome-terminal"
 let R_in_buffer=1
 let R_hl_term=1
 let R_applescript=0
-"let R_tmux_split=1
 
 let R_rconsole_height = 15
 let R_rconsole_width = 190
 let R_min_editor_width = 90
 
 let R_pdfviewer="okular"
+
+let R_show_args = 0
+let R_show_arg_help = 0
 
 " kraj Nvim opcija
 
