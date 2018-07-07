@@ -10,7 +10,8 @@ rofi.matching: fuzzy
 rofi.combi-modi: window,run,drun
 rofi.switchers: combi,window
 rofi.scroll-method: 1
-rofi.font: System San Francisco Display 12
+rofi.font: Monofur Nerd Font Mono Medium 14
 rofi.lines:15
 rofi.line-margin:0
 rofi.bw:0
+rofi.terminal:gnome-terminal
