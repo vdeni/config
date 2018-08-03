@@ -19,6 +19,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'kshenoy/vim-signature'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Valloric/YouCompleteMe'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 set conceallevel=0
@@ -86,6 +87,7 @@ let g:pymode_run_bind='<leader>r'
 let g:pymode_warnings=1
 let g:pymode_trim_whitespaces=1
 let g:pymode_options=1
+let g:pymode_virtualenv=1
 
 "slime
 let g:slime_target='tmux'
@@ -110,6 +112,7 @@ let g:changes_use_icons=0
 let g:ycm_key_invoke_completion = '<C-X><C-O>'
 let g:ycm_auto_trigger = 0
 let g:ycm_server_python_interpreter = '/usr/bin/python3.6'
+let g:ycm_autoclose_preview_window_after_completion=1
 
 set guifont=Hurmit\ Nerd\ Font\ Mono\ Medium
 let g:airline_powerline_fonts=1
@@ -131,4 +134,13 @@ let g:vim_markdown_conceal = 0
 
 " indentline: gasi conceal za indentline jer interferira s tex i md
 let g:indentLine_fileTypeExclude = ['tex', 'markdown', 'md']
-let g:indentLine_conceallevel = 0
+
+" python virualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
