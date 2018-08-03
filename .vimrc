@@ -14,12 +14,12 @@ Plug 'jpalardy/vim-slime'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'LaTeX-Box-Team/LaTeX-Box'
-Plug 'chrisbra/changesPlugin'
 Plug 'Yggdroot/indentLine'
-Plug 'kshenoy/vim-signature'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-fugitive'
+Plug 'kshenoy/vim-signature'
+Plug 'mhinz/vim-signify'
 call plug#end()
 
 set conceallevel=0
