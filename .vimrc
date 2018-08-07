@@ -22,11 +22,13 @@ Plug 'kshenoy/vim-signature'
 Plug 'mhinz/vim-signify'
 call plug#end()
 
-set conceallevel=0
-
 set directory^=$HOME/.vim/tmp//
 
 color molokai
+
+" boje guttera i linenr bg
+highlight LineNr ctermbg=233
+highlight SignColumn ctermbg=233
 
 syntax sync minlines=256
 set number
@@ -102,19 +104,12 @@ let g:airline_theme='powerlineish'
 "nerdtree autorun
 autocmd vimenter * NERDTree
 
-"changes
-hi ChangesSignTextAdd ctermbg=yellow ctermfg=black guibg=#27AE60
-hi ChangesSignTextDel ctermbg=darkred  ctermfg=black guibg=#CB4335
-hi ChangesSignTextCh  ctermbg=black  ctermfg=white guibg=#2E86C1
-let g:changes_use_icons=0
-
 " youcompleteme
 let g:ycm_key_invoke_completion = '<C-X><C-O>'
 let g:ycm_auto_trigger = 0
 let g:ycm_server_python_interpreter = '/usr/bin/python3.6'
 let g:ycm_autoclose_preview_window_after_completion=1
 
-set guifont=Hurmit\ Nerd\ Font\ Mono\ Medium
 let g:airline_powerline_fonts=1
 
 " spremanje foldova
@@ -129,11 +124,12 @@ set foldcolumn=1
 " ctrlp
 let g:ctrlp_regexp = 1 "regex kao default search
 
-" vim markdown
-let g:vim_markdown_conceal = 0
-
 " indentline: gasi conceal za indentline jer interferira s tex i md
-let g:indentLine_fileTypeExclude = ['tex', 'markdown', 'md']
+let g:indentLine_fileTypeExclude = ['tex', 'markdown', 'md', 'Rmd']
+let g:indentLine_setConceal=0
+
+" gasi conceal za
+autocmd FileType Rmd,markdown,md,latex,tex set cole=0
 
 " python virualenv support
 py << EOF
