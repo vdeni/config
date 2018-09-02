@@ -2,10 +2,12 @@
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: #154360, #000000, #21618c
-rofi.color-normal: #154360, #e0e0e0, #154360, argb:FF21618c, #ffc107
-rofi.color-active: #154360, #42a5f5, #154360, argb:FF21618c, #42a5f5
-rofi.color-urgent: #154360, #e64a19, #154360, argb:7321618c, #e64a19
+
+rofi.color-window: #ee3E2723, #000000, #ffc107
+rofi.color-normal: #007E5109, #ffe0e0e0, #00154360, argb:00154360, #ffffc107
+rofi.color-active: #007E5109, #ff42a5f5, #00154360, argb:00154360, #ff42a5f5
+rofi.color-urgent: #007E5109, #ffe64a19, #00154360, argb:00154360, #ffe64a19
+
 rofi.matching: fuzzy
 rofi.combi-modi: window,run,drun
 rofi.switchers: combi,window
@@ -15,3 +17,6 @@ rofi.lines:15
 rofi.line-margin:0
 rofi.bw:0
 rofi.terminal:gnome-terminal
+
+rofi.padding: 400
+rofi.width: 100
