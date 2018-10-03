@@ -13,7 +13,7 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'jpalardy/vim-slime'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'lervag/vimtex'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Valloric/YouCompleteMe'
@@ -107,7 +107,7 @@ autocmd vimenter * NERDTree
 " youcompleteme
 let g:ycm_key_invoke_completion = '<C-X><C-O>'
 let g:ycm_auto_trigger = 0
-let g:ycm_server_python_interpreter = '/usr/bin/python3.6'
+let g:ycm_server_python_interpreter = '/usr/bin/python3.7'
 let g:ycm_autoclose_preview_window_after_completion=1
 
 let g:airline_powerline_fonts=1
