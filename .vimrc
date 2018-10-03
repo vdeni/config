@@ -13,13 +13,14 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'jpalardy/vim-slime'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'lervag/vimtex'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-fugitive'
 Plug 'kshenoy/vim-signature'
 Plug 'mhinz/vim-signify'
+Plug 'tweekmonster/impsort.vim'
+Plug 'lervag/vimtex'
 call plug#end()
 
 set directory^=$HOME/.vim/tmp//
