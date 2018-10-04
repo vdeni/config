@@ -85,6 +85,16 @@ autocmd FileType rnoweb inoremap <buffer> \- <Esc>:normal! a %>%<CR>a
 autocmd FileType rmd inoremap <buffer> \- <Esc>:normal! a %>%<CR>a 
 autocmd FileType rnw inoremap <buffer> \- <Esc>:normal! a %>%<CR>a 
 
+autocmd FileType r inoremap <buffer> \$ <Esc>:normal! a %$%<CR>a 
+autocmd FileType rnoweb inoremap <buffer> \$ <Esc>:normal! a %$%<CR>a 
+autocmd FileType rmd inoremap <buffer> \$ <Esc>:normal! a %$%<CR>a 
+autocmd FileType rnw inoremap <buffer> \$ <Esc>:normal! a %$%<CR>a 
+
+autocmd FileType r inoremap <buffer> \< <Esc>:normal! a %<>%<CR>a 
+autocmd FileType rnoweb inoremap <buffer> \< <Esc>:normal! a %<>%<CR>a 
+autocmd FileType rmd inoremap <buffer> \< <Esc>:normal! a %<>%<CR>a 
+autocmd FileType rnw inoremap <buffer> \< <Esc>:normal! a %<>%<CR>a 
+
 " opcije za vim-python
 
 let g:pymode_run=1
