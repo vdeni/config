@@ -13,14 +13,13 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'jpalardy/vim-slime'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'lervag/vimtex'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-fugitive'
 Plug 'kshenoy/vim-signature'
 Plug 'mhinz/vim-signify'
-Plug 'tweekmonster/impsort.vim'
-Plug 'lervag/vimtex'
 call plug#end()
 
 set directory^=$HOME/.vim/tmp//
@@ -41,7 +40,7 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 let g:pandoc#filetypes#pandoc_markdown = 0
 
 "spellcheck
-autocmd FileType markdown,md,latex,tex setlocal spell
+autocmd FileType markdown,md,latex,tex,Rmd,Rnw setlocal spell
 set spelllang=hr
 
 set pastetoggle=<F3>
@@ -81,7 +80,10 @@ let R_pdfviewer="okular"
 let R_show_args = 0
 let R_show_arg_help = 0
 
-" kraj Nvim opcija
+autocmd FileType r inoremap <buffer> \- <Esc>:normal! a %>%<CR>a 
+autocmd FileType rnoweb inoremap <buffer> \- <Esc>:normal! a %>%<CR>a 
+autocmd FileType rmd inoremap <buffer> \- <Esc>:normal! a %>%<CR>a 
+autocmd FileType rnw inoremap <buffer> \- <Esc>:normal! a %>%<CR>a 
 
 " opcije za vim-python
 
@@ -141,3 +143,6 @@ if 'VIRTUAL_ENV' in os.environ:
   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
   execfile(activate_this, dict(__file__=activate_this))
 EOF
+
+" vimtex
+let g:vimtex_compiler_latexmk = {'continuous' : 0}
