@@ -1,5 +1,5 @@
 [global]
-    font = Hurmit Nerd Font Mono 10
+    font = FuraCode Nerd Font Mono 10
     
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -37,7 +37,7 @@
     # window allows bounces back and forth.
     # This option conflicts with "word_wrap".
     # Set to 0 to disable.
-    bounce_freq = 0
+    bounce_freq = 2
 
     
     # Show age of message if message is older than show_age_threshold
@@ -47,7 +47,8 @@
     
     # Split notifications into multiple lines if they don't fit into
     # geometry.
-    word_wrap = yes
+    word_wrap = false
+    ellipsize = end
     
     # Ignore newlines '\n' in notifications.
     ignore_newline = no
