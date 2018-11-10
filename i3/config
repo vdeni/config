@@ -274,7 +274,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id bash /home/denis/.i3/i3lock-fancy-multimonitor/lock -p
+bindsym $mod+9 exec --no-startup-id bash /home/denis/.i3/i3lock-fancy-multimonitor/lock -p -n
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
