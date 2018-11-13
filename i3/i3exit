@@ -7,7 +7,7 @@
 case "$1" in
     lock)
         #blurlock
-	bash ~/.i3/i3lock-fancy-multimonitor/lock --pixelate
+	bash ~/.i3/i3lock-fancy-multimonitor/lock -p -n
         ;;
     logout)
         i3-msg exit
@@ -17,11 +17,11 @@ case "$1" in
         ;;
     suspend)
         #blurlock && $logind suspend
-	bash ~/.i3/i3lock-fancy-multimonitor/lock --pixelate && $logind suspend
+	bash ~/.i3/i3lock-fancy-multimonitor/lock -p -n && $logind suspend
         ;;
     hibernate)
         #blurlock && $logind hibernate
-	bash ~/.i3/i3lock-fancy-multimonitor/lock --pixelate && $logind hibernate
+	bash ~/.i3/i3lock-fancy-multimonitor/lock -p -n && $logind suspend
         ;;
     reboot)
         $logind reboot
