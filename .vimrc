@@ -13,7 +13,6 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'jpalardy/vim-slime'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'lervag/vimtex'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Valloric/YouCompleteMe'
@@ -21,33 +20,34 @@ Plug 'tpope/vim-fugitive'
 Plug 'kshenoy/vim-signature'
 Plug 'mhinz/vim-signify'
 Plug 'tweekmonster/impsort.vim'
+Plug 'LaTeX-Box-Team/LaTeX-Box'
 call plug#end()
 
 set directory^=$HOME/.vim/tmp//
 
 color molokai
 
-" boje guttera i linenr bg
+" boje guttera i linenr bg, boja margine
 highlight LineNr ctermbg=233
 highlight SignColumn ctermbg=233
+highlight ColorColumn ctermbg=173
 
 syntax sync minlines=256
 set number
 set cursorline
 set clipboard=unnamedplus
 
-" prepoznaj .md file kao tip markdown
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 let g:pandoc#filetypes#pandoc_markdown = 0
 
-" spellcheck
-autocmd FileType markdown,md,latex,tex,Rmd,Rnw setlocal spell
+"spellcheck
+autocmd FileType markdown,md,latex,tex,Rnw,Rmd setlocal spell
 set spelllang=hr
 
 set pastetoggle=<F3>
 
-" highlight LineNr ctermfg=yellow
+"highlight LineNr ctermfg=yellow
 set showcmd
 set encoding=utf-8
 set hlsearch
@@ -65,7 +65,7 @@ set nofoldenable    " disable folding
 
 " nvim opcije
 
-"" horizontalno otvaranje helpdoca za R
+" horizontalno otvaranje helpdoca za R
 let R_nvimpager="horizontal"
 
 let R_term="gnome-terminal"
@@ -82,19 +82,16 @@ let R_pdfviewer="okular"
 let R_show_args = 0
 let R_show_arg_help = 0
 
-"" hotkey za insert %>%
-autocmd FileType r inoremap <buffer> <leader>- <Esc>:normal! a %>%<CR>a 
-autocmd FileType rnoweb inoremap <buffer> <leader>- <Esc>:normal! a %>%<CR>a 
-autocmd FileType rmd inoremap <buffer> <leader>- <Esc>:normal! a %>%<CR>a 
-autocmd FileType rnw inoremap <buffer> <leader>- <Esc>:normal! a %>%<CR>a 
+autocmd FileType r inoremap <buffer> \- <Esc>:normal! a %>%<CR>a 
+autocmd FileType rnoweb inoremap <buffer> \- <Esc>:normal! a %>%<CR>a 
+autocmd FileType rmd inoremap <buffer> \- <Esc>:normal! a %>%<CR>a 
+autocmd FileType rnw inoremap <buffer> \- <Esc>:normal! a %>%<CR>a 
 
-"" hotkey za insert %$%
 autocmd FileType r inoremap <buffer> \$ <Esc>:normal! a %$%<CR>a 
 autocmd FileType rnoweb inoremap <buffer> \$ <Esc>:normal! a %$%<CR>a 
 autocmd FileType rmd inoremap <buffer> \$ <Esc>:normal! a %$%<CR>a 
 autocmd FileType rnw inoremap <buffer> \$ <Esc>:normal! a %$%<CR>a 
 
-"" hotkey za insert %<>%
 autocmd FileType r inoremap <buffer> \< <Esc>:normal! a %<>%<CR>a 
 autocmd FileType rnoweb inoremap <buffer> \< <Esc>:normal! a %<>%<CR>a 
 autocmd FileType rmd inoremap <buffer> \< <Esc>:normal! a %<>%<CR>a 
@@ -109,17 +106,17 @@ let g:pymode_trim_whitespaces=1
 let g:pymode_options=1
 let g:pymode_virtualenv=1
 
-" slime
+"slime
 let g:slime_target='tmux'
 nmap <leader>p <Plug>SlimeParagraphSend
 nmap <leader>l <Plug>SlimeLineSend
 xmap <leader>s <Plug>SlimeRegionSend
 
-" airline opcije
+"airline opcije
 set laststatus=2
 let g:airline_theme='powerlineish'
 
-" nerdtree autorun
+"nerdtree autorun
 autocmd vimenter * NERDTree
 
 " youcompleteme
@@ -147,7 +144,7 @@ let g:indentLine_fileTypeExclude = ['tex', 'markdown', 'md', 'Rmd']
 let g:indentLine_setConceal=0
 
 " gasi conceal za
-autocmd FileType rmd,markdown,md,latex,tex setlocal cole=0
+autocmd FileType rmd,markdown,md,latex,tex set cole=0
 
 " isključuje smarttabs za makefile
 autocmd FileType make setlocal nosmarttab
@@ -161,6 +158,3 @@ if 'VIRTUAL_ENV' in os.environ:
   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
   execfile(activate_this, dict(__file__=activate_this))
 EOF
-
-" vimtex
-let g:vimtex_compiler_latexmk = {'continuous' : 0}
