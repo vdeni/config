@@ -30,7 +30,7 @@ color molokai
 " boje guttera i linenr bg, boja margine
 highlight LineNr ctermbg=233
 highlight SignColumn ctermbg=233
-highlight ColorColumn ctermbg=173
+highlight ColorColumn ctermbg=237
 
 syntax sync minlines=256
 set number
@@ -42,7 +42,7 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 let g:pandoc#filetypes#pandoc_markdown = 0
 
 "spellcheck
-autocmd FileType markdown,md,latex,tex,Rnw,Rmd setlocal spell
+autocmd FileType markdown,md,latex,tex,rnw,rmd setlocal spell
 set spelllang=hr
 
 set pastetoggle=<F3>
@@ -140,8 +140,8 @@ set foldcolumn=1
 let g:ctrlp_regexp = 1 "regex kao default search
 
 " indentline: gasi conceal za indentline jer interferira s tex i md
-let g:indentLine_fileTypeExclude = ['tex', 'markdown', 'md', 'Rmd']
-let g:indentLine_setConceal=0
+let g:indentLine_fileTypeExclude = ['tex', 'markdown', 'md', 'rmd']
+let g:indentLine_setConceal=1
 
 " gasi conceal za
 autocmd FileType rmd,markdown,md,latex,tex set cole=0
