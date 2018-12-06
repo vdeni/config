@@ -32,6 +32,8 @@ highlight LineNr ctermbg=233
 highlight SignColumn ctermbg=233
 highlight ColorColumn ctermbg=237
 
+set colorcolumn=80
+
 syntax sync minlines=256
 set number
 set cursorline
