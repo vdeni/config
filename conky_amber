@@ -7,7 +7,7 @@ conky.config = {
 	double_buffer = true,
 	font = 'FuraCode Nerd Font Mono Medium:size=8',
 	gap_x = 25,
-	xinerama_head = 2,
+	xinerama_head = 1,
 	gap_y = 13,
 	minimum_width = 200,
 	no_buffers = true,
