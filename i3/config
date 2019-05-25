@@ -223,6 +223,7 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 # for_window [class="Xfburn"] floating enable
 for_window [class="(?i)bitwarden"] floating enable resize set 860px 800px
+for_window [class="Steam"] floating enable resize set 1400px 1000px
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
