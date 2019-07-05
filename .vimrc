@@ -20,7 +20,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'kshenoy/vim-signature'
 Plug 'mhinz/vim-signify'
 Plug 'tweekmonster/impsort.vim'
-Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'lervag/vimtex'
 call plug#end()
 
 set directory^=$HOME/.vim/tmp//
@@ -160,3 +160,7 @@ if 'VIRTUAL_ENV' in os.environ:
   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
   execfile(activate_this, dict(__file__=activate_this))
 EOF
+
+" vimtex continuous
+let g:vimtex_enabled = 1
+let g:vimtex_compiler_latexmk = {'continuous' : 0}
