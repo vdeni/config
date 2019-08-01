@@ -55,18 +55,18 @@ bindsym $mod+Ctrl+m exec pavucontrol
 ################################################################################################
 
 # Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym $mod+F6 exec xbacklight -inc 10
+bindsym $mod+F5 exec xbacklight -dec 10
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec palemoon
-bindsym $mod+F3 exec pcmanfm
-# bindsym $mod+F3 exec ranger
-bindsym $mod+Shift+F3 exec gksu pcmanfm
-bindsym $mod+F5 exec terminal -e 'mocp'
+bindsym $mod+F2 exec firefox
+bindsym $mod+F3 exec thunar
+bindsym $mod+F4 exec gnome-terminal -e 'ranger'
+# bindsym $mod+Shift+F3 exec gksu pcmanfm
+# bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+bindsym $mod+Ctrl+t exec --no-startup-id compton -fb
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
@@ -228,6 +228,8 @@ for_window [class="Steam"] floating enable resize set 1400px 1000px
 for_window [class="(?i)thunar"] floating enable resize set 1000px 900px
 for_window [title="(?i)Rename.*"] floating enable resize set 400 px 100 px
 for_window [title="(?i)Create New Folder.*"] floating enable resize set 400 px 100 px
+for_window [title="(?i)File Operation Progress"] floating enable resize set 400 px 100 px
+for_window [id='0x2e00001'] floating enable resize set 400 px 100 px
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -463,4 +465,4 @@ mode "$mode_gaps_outer" {
 }
 
 # monitori
-exec_always xrandr --output HDMI2 --off --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output eDP1 --primary --mode 1920x1080 --pos 2016x0 --rotate normal --output VIRTUAL1 --off
+exec_always xrandr --output HDMI1 --off --output HDMI2 --set "Broadcast RGB" "Full" --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output eDP1 --primary --mode 1920x1080 --pos 2016x0 --rotate normal --output VIRTUAL1 --off
