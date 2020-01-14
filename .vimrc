@@ -21,6 +21,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'mhinz/vim-signify'
 Plug 'tweekmonster/impsort.vim'
 Plug 'lervag/vimtex'
+Plug 'maverickg/stan.vim'
 call plug#end()
 
 set directory^=$HOME/.vim/tmp//
@@ -68,16 +69,17 @@ set nofoldenable    " disable folding
 " nvim opcije
 
 " horizontalno otvaranje helpdoca za R
-let R_nvimpager="horizontal"
+let R_nvimpager="tabnew"
 
 let R_term="gnome-terminal"
 let R_in_buffer=1
 let R_hl_term=1
 let R_applescript=0
 
-let R_rconsole_height = 15
-let R_rconsole_width = 190
-let R_min_editor_width = 90
+"let R_rconsole_height = 15
+"let R_rconsole_width = 190
+let R_rconsole_width = 90
+let R_min_editor_width = 20
 
 let R_pdfviewer="okular"
 
@@ -124,7 +126,7 @@ autocmd vimenter * NERDTree
 " youcompleteme
 let g:ycm_key_invoke_completion = '<C-X><C-O>'
 let g:ycm_auto_trigger = 0
-let g:ycm_server_python_interpreter = '/usr/bin/python3.7'
+let g:ycm_server_python_interpreter = '/usr/bin/python3.8'
 let g:ycm_autoclose_preview_window_after_completion=1
 
 let g:airline_powerline_fonts=1
@@ -164,3 +166,5 @@ EOF
 " vimtex continuous
 let g:vimtex_enabled = 1
 let g:vimtex_compiler_latexmk = {'continuous' : 0}
+
+set backspace=indent,eol,start
