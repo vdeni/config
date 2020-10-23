@@ -16,17 +16,24 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Valloric/YouCompleteMe'
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
 Plug 'kshenoy/vim-signature'
 Plug 'mhinz/vim-signify'
 Plug 'tweekmonster/impsort.vim'
 Plug 'lervag/vimtex'
-Plug 'maverickg/stan.vim'
+Plug 'eigenfoo/stan-vim'
+Plug 'morhetz/gruvbox'
+"Plug 'maverickg/stan.vim'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 set directory^=$HOME/.vim/tmp//
 
-color molokai
+set termguicolors
+set background=dark
+
+let g:gruvbox_italic=1
+colorscheme gruvbox
 
 " boje guttera i linenr bg, boja margine
 highlight LineNr ctermbg=233
@@ -44,13 +51,12 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 let g:pandoc#filetypes#pandoc_markdown = 0
 
-"spellcheck
+" spellcheck
 autocmd FileType markdown,md,latex,tex,rnw,rmd setlocal spell
 set spelllang=hr
 
 set pastetoggle=<F3>
 
-"highlight LineNr ctermfg=yellow
 set showcmd
 set encoding=utf-8
 set hlsearch
@@ -76,15 +82,10 @@ let R_in_buffer=1
 let R_hl_term=1
 let R_applescript=0
 
-"let R_rconsole_height = 15
-"let R_rconsole_width = 190
 let R_rconsole_width = 90
 let R_min_editor_width = 20
 
 let R_pdfviewer="okular"
-
-let R_show_args = 0
-let R_show_arg_help = 0
 
 autocmd FileType r inoremap <buffer> \- <Esc>:normal! a %>%<CR>a 
 autocmd FileType rnoweb inoremap <buffer> \- <Esc>:normal! a %>%<CR>a 
@@ -109,27 +110,28 @@ let g:pymode_warnings=1
 let g:pymode_trim_whitespaces=1
 let g:pymode_options=1
 let g:pymode_virtualenv=1
+set completeopt=menu
 
-"slime
+" slime
 let g:slime_target='tmux'
 nmap <leader>p <Plug>SlimeParagraphSend
 nmap <leader>l <Plug>SlimeLineSend
 xmap <leader>s <Plug>SlimeRegionSend
 
-"airline opcije
+" airline opcije
 set laststatus=2
 let g:airline_theme='powerlineish'
 
-"nerdtree autorun
+let g:airline_powerline_fonts=1
+
+" nerdtree autorun
 autocmd vimenter * NERDTree
 
 " youcompleteme
 let g:ycm_key_invoke_completion = '<C-X><C-O>'
 let g:ycm_auto_trigger = 0
-let g:ycm_server_python_interpreter = '/usr/bin/python3.8'
+let g:ycm_server_python_interpreter = '/usr/bin/python3'
 let g:ycm_autoclose_preview_window_after_completion=1
-
-let g:airline_powerline_fonts=1
 
 " spremanje foldova
 augroup AutoSaveFolds
@@ -149,12 +151,13 @@ let g:indentLine_setConceal=1
 
 " gasi conceal za
 autocmd FileType rmd,markdown,md,latex,tex set cole=0
+autocmd FileType rmd,markdown,md,latex,tex set foldmethod=manual
 
 " isključuje smarttabs za makefile
 autocmd FileType make setlocal nosmarttab
 
 " python virualenv support
-py << EOF
+py3 << EOF
 import os
 import sys
 if 'VIRTUAL_ENV' in os.environ:
@@ -167,4 +170,15 @@ EOF
 let g:vimtex_enabled = 1
 let g:vimtex_compiler_latexmk = {'continuous' : 0}
 
+let g:tex_flavor = 'latex'
+
+" various
 set backspace=indent,eol,start
+
+set pythonhome='/usr/lib64/python2.7'
+set pythondll='/usr/lib64/libpython2.7.so'
+
+set pythonthreehome='/usr/lib/python3.8'
+set pythonthreedll='/usr/lib/libpython3.8.so'
+
+set relativenumber
