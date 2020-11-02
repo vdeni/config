@@ -32,6 +32,7 @@ set directory^=$HOME/.vim/tmp//
 set termguicolors
 set background=dark
 
+let g:gruvbox_guisp_fallback = "bg"
 let g:gruvbox_italic=1
 colorscheme gruvbox
 
@@ -44,6 +45,7 @@ set colorcolumn=80
 
 syntax sync minlines=256
 set number
+set relativenumber
 set cursorline
 set clipboard=unnamedplus
 
@@ -136,9 +138,12 @@ let g:ycm_autoclose_preview_window_after_completion=1
 " spremanje foldova
 augroup AutoSaveFolds
   autocmd!
-  autocmd BufWinLeave *.* mkview
-  autocmd BufWinEnter *.* silent loadview
-augroup END
+  " view files are about 500 bytes
+  " bufleave but not bufwinleave captures closing 2nd tab
+  " nested is needed by bufwrite* (if triggered via other autocmd)
+  autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
+  autocmd BufWinEnter ?* silent! loadview
+augroup end
 
 set foldcolumn=1
 
@@ -181,4 +186,5 @@ set pythondll='/usr/lib64/libpython2.7.so'
 set pythonthreehome='/usr/lib/python3.8'
 set pythonthreedll='/usr/lib/libpython3.8.so'
 
-set relativenumber
+" vim-stan
+setlocal omnifunc=syntaxcomplete#Complete
