@@ -1,0 +1,17 @@
+configuration {
+	modi: "drun,combi,window";
+	lines: 15;
+	font: "Furacode Nerd Font Mono Medium 13";
+	bw: 0;
+	show-icons: true;
+	terminal: "gnome-terminal";
+	sort: true;
+	combi-modi: "drun,window,run";
+	matching: "fuzzy";
+	line-margin: 0;
+	scroll-method: 1;
+	color-normal: "#007E5109, #ffe0e0e0, #00154360, argb:00154360, #ffffc107";
+	color-urgent: "#007E5109, #ffe64a19, #00154360, argb:00154360, #ffe64a19";
+	color-active: "#007E5109, #ff42a5f5, #00154360, argb:11ffc107, #ff42a5f5";
+	color-window: "#232d35, #000000, #ffc107";
+}
