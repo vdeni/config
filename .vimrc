@@ -16,15 +16,15 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Valloric/YouCompleteMe'
-"Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'kshenoy/vim-signature'
 Plug 'mhinz/vim-signify'
 Plug 'tweekmonster/impsort.vim'
 Plug 'lervag/vimtex'
 Plug 'eigenfoo/stan-vim'
 Plug 'morhetz/gruvbox'
-"Plug 'maverickg/stan.vim'
-Plug 'airblade/vim-gitgutter'
+Plug 'JuliaEditorSupport/julia-vim'
+"Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 set directory^=$HOME/.vim/tmp//
@@ -75,16 +75,16 @@ set smartcase     " ignore case if search pattern is all lowercase,
 set nofoldenable    " disable folding
 
 " nvim opcije
-
 " horizontalno otvaranje helpdoca za R
 let R_nvimpager="tabnew"
 
-let R_term="gnome-terminal"
+" let R_external_term='gnome-terminal'
+let R_external_term='gnome-terminal'
 let R_in_buffer=1
 let R_hl_term=1
 let R_applescript=0
 
-let R_rconsole_width = 90
+let R_rconsole_width = 75
 let R_min_editor_width = 20
 
 let R_pdfviewer="okular"
@@ -119,6 +119,7 @@ let g:slime_target='tmux'
 nmap <leader>p <Plug>SlimeParagraphSend
 nmap <leader>l <Plug>SlimeLineSend
 xmap <leader>s <Plug>SlimeRegionSend
+nmap <leader>r :SlimeSend0 "<c-l>"<CR>
 
 " airline opcije
 set laststatus=2
@@ -128,6 +129,8 @@ let g:airline_powerline_fonts=1
 
 " nerdtree autorun
 autocmd vimenter * NERDTree
+
+let g:NERDTreeWinSize=25
 
 " youcompleteme
 let g:ycm_key_invoke_completion = '<C-X><C-O>'
@@ -183,8 +186,11 @@ set backspace=indent,eol,start
 set pythonhome='/usr/lib64/python2.7'
 set pythondll='/usr/lib64/libpython2.7.so'
 
-set pythonthreehome='/usr/lib/python3.8'
-set pythonthreedll='/usr/lib/libpython3.8.so'
+set pythonthreehome='/usr/lib/python3.9'
+set pythonthreedll='/usr/lib/libpython3.9.so'
 
 " vim-stan
 setlocal omnifunc=syntaxcomplete#Complete
+
+" vim command completion
+set wildmenu
