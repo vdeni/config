@@ -27,6 +27,8 @@ Plug 'JuliaEditorSupport/julia-vim'
 "Plug 'airblade/vim-gitgutter'
 call plug#end()
 
+runtime macros/matchit.vim
+
 set directory^=$HOME/.vim/tmp//
 
 set termguicolors
