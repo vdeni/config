@@ -22,16 +22,16 @@ bindsym $mod+n border normal
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font xft:Noto Sans 7
-font xft:FuraCode Nerd Font Mono Medium 9
+font xft:Fira Code Medium 9
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
 # start Rofi
-bindsym ctrl+space exec rofi -show combi
+bindsym ctrl+space exec rofi -show drun
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -46,35 +46,35 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
-#exec --no-startup-id volumeicon
-#bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-#exec --no-startup-id pulseaudio
+# exec --no-startup-id volumeicon
+# bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+exec --no-startup-id pulseaudio --start
 exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
 # Screen brightness controls
-bindsym $mod+F6 exec xbacklight -inc 8
-bindsym $mod+F5 exec xbacklight -dec 8
+# bindsym $mod+F6 exec xbacklight -inc 8
+# bindsym $mod+F5 exec xbacklight -dec 8
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec thunar
-bindsym $mod+F4 exec gnome-terminal -e 'ranger'
+bindsym $mod+F4 exec alacritty -e 'ranger'
 # bindsym $mod+Shift+F3 exec gksu pcmanfm
 # bindsym $mod+F5 exec terminal -e 'mocp'
-bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -fb
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+# bindsym $mod+t exec --no-startup-id pkill compton
+# bindsym $mod+Ctrl+t exec --no-startup-id compton -fb
+# bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 #bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
-# focus_follows_mouse no
+focus_follows_mouse yes
 
 # change focus
 bindsym $mod+h focus left
@@ -89,10 +89,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left 50 px
+bindsym $mod+Shift+j move down 50 px
+bindsym $mod+Shift+k move up 50 px
+bindsym $mod+Shift+l move right 50 px
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -129,6 +129,7 @@ bindsym $mod+Shift+s sticky toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+bindsym $mod+Shift+d focus child
 
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -138,8 +139,10 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 #navigate workspaces next / previous
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
+#bindsym $mod+Ctrl+Right workspace next
+#bindsym $mod+Ctrl+Left workspace prev
+bindsym $mod+Ctrl+l workspace next
+bindsym $mod+Ctrl+h workspace prev
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
@@ -194,7 +197,8 @@ bindsym $mod+Ctrl+8 move container to workspace $ws8; workspace $ws8
 
 for_window [class="^.*"] border pixel 2
 
-for_window [title="Shutter"] floating enable border normal
+for_window [class="Xarchiver"] floating enable border pixel 2
+for_window [class="Shutter"] floating enable border pixel 2
 for_window [title="alsamixer"] floating enable border pixel 2
 for_window [class="Calamares"] floating enable border normal
 # for_window [class="Clipgrab"] floating enable
@@ -218,13 +222,11 @@ for_window [class="Pavucontrol"] floating enable
 # for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [class="Simple-scan"] floating enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
-for_window [class="Skype"] floating enable
 # for_window [class="Thus"] floating enable border normal
 # for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable
 for_window [class="Xfburn"] floating enable
 for_window [class="(?i)bitwarden"] floating enable resize set 860px 800px
-for_window [class="Steam"] floating enable resize set 1400px 1000px
 for_window [class="(?i)thunar"] floating enable resize set 1000px 900px
 for_window [title="(?i)Rename.*"] floating enable resize set 400 px 100 px
 for_window [title="(?i)Create New Folder.*"] floating enable resize set 400 px 100 px
@@ -232,6 +234,8 @@ for_window [title="(?i)File Operation Progress"] floating enable resize set 400 
 for_window [title="(?i)Quick Format Citation"] floating enable resize set 400 px 100 px
 for_window [title="(?i)Progress"] floating enable resize set 400 px 100 px
 for_window [id='0x2e00001'] floating enable resize set 400 px 100 px
+for_window [title="(?i)select by pattern"] floating enable resize set 400 px 100 px
+for_window [class="(?i)signal"] floating enable resize set 1200 px 900 px
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -270,10 +274,14 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
+        # bindsym h resize shrink width 5 px or 5 ppt
+        # bindsym j resize grow height 5 px or 5 ppt
+        # bindsym k resize shrink height 5 px or 5 ppt
+        # bindsym l resize grow width 5 px or 5 ppt
+        bindsym h resize shrink width 40 px
+        bindsym j resize grow height 40 px
+        bindsym k resize shrink height 40 px
+        bindsym l resize grow width 40 px
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -287,24 +295,27 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id bash /home/denis/.i3/i3lock-fancy-multimonitor/lock -p -n
+bindsym $mod+9 exec --no-startup-id i3lock-fancy-multimonitor -p -n
 
 # Autostart applications
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+# exec --no-startup-id picom -b --vsync
 #exec --no-startup-id manjaro-hello
-exec --no-startup-id nm-applet
+exec --no-startup-id dunst
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
+exec --no-startup-id nm-applet
+#exec --no-startup-id connman-ui-gtk
+# exec --no-startup-id clipit
 exec --no-startup-id fluxgui
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 #exec --no-startup-id start_conky_maia
-exec --no-startup-id start_conky_amber
+#exec --no-startup-id start_conky_amber
 #exec --no-startup-id start_conky_green
 # exec --no-startup-id xautolock -time 10 -locker blurlock
-exec_always --no-startup-id ff-theme-util
+#exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id numlockx off
 
@@ -380,7 +391,7 @@ bar {
 
 	bindsym button4 nop
 	bindsym button5 nop
-	font xft:FuraCode Nerd Font Mono Medium 11
+	font xft:Fira Code Medium 11
 	strip_workspace_numbers yes
 
 	colors {
@@ -467,6 +478,8 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-# monitori
-exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output HDMI1 --off --output HDMI2 --set "Broadcast RGB" "Full" --mode 1920x1080 --pos 2010x0 --rotate normal --output VIRTUAL1 --off
+# mouse sensitivity
+exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" .5
 
+# monitori
+exec xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output HDMI-2 --set "Broadcast RGB" "Full" --mode 2560x1080 --pos 1999x0 --rotate normal
